@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest02.html</title>
+
+<style type="text/css">
+	.item
+	{
+		border: solid 2px red;
+		color: white;
+		background: black;
+	}
+</style>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	/*
+	function test()
+	{
+		alert("함수 호출 확인");
+	}
+	*/
+
+	// 제이쿼리 함수
+	//jquery(document).ready(); --> 처음 제이쿼리 함수의 형태 → 편의성 위해 jquery를 $로 대체
+	//$(document).ready();
+	//jquery();
+	//$();
+	
+	//$(document).ready(기능삽입/동작수행/행위처리);
+	$(document).ready(function() 
+	{
+		// 테스트
+		// alert("기능 확인");
+		
+		// ※ 우리, 혹은 사용자가 아무것도 건드리지 않아도 (특별한 이벤트 발생시키지 않아도)
+		// 자동으로 처리되는 영역
+		
+		/*
+		// 문서가 실행되자마자 h1 엘리먼트를 가져와라.
+		// 그리고 click 되었을 때 특정 기능을 하게 하라 → function 안에 기술
+		$("h1").click(function() 
+		{
+			//alert("클릭되었는데요..");
+			//alert( $(this).html() ); -> h1의 value 값이 alert창으로 나온다.
+			//$(this).html("어떻게 될까요?"); //-> 클릭시 글씨가 모두 어떻게 될까요?로 바뀐다.
+			$(this).html( $(this).html() + "★" ); -> 클릭시마다 별이 계속 붙는다.
+		});
+		*/
+		
+		/*
+		// 'on()' : 이벤트 처리
+		$("h1").on("click", function()
+		{
+			//alert("클릭 이벤트 발생");
+			//alert( $(this).html() );
+		});
+		*/
+		
+		/*
+		$("h1").one("click", function()
+		{
+			//alert("클릭~!!");
+			//alert( $(this).html() );
+			
+			$(this).html(function(index, html)
+			{
+				//alert(html);
+				//alert(index);
+				return html + "★";
+			});
+		})
+		*/
+		
+		/*
+		$("h1").on(
+		{
+			// mouseenter : 이것에 클래스 속성을 더하겠다. → 마우스 진입 시
+			// mouseleave : 이것에 클래스 속성을 제거한다. → 마우스 빠져나올 때
+			mouseenter:function(){ $(this).addClass("item") }
+			, mouseleave:function(){ $(this).removeClass("item") }
+		});
+		*/
+		
+		// mouseenter, mouseleave 이벤트가 결합되어 있는 것이 hover
+		// on 함수에서 각자 정의하는 것과 달리, 함수를 2개 정의해야 한다.
+		$("h1").hover(function()
+		{
+			$(this).addClass("item");
+		}, function()
+		{
+			$(this).removeClass("item");
+		});
+		
+	});
+	
+	
+</script>
+
+</head>
+<body>
+
+<!-- <h1 onclick="함수()">박정준</h1> -->
+<!-- <h1 onclick="test()">박정준</h1> -->
+<h1>박정준</h1>
+<h1>심혜진</h1>
+<h1>선혜연</h1>
+
+</body>
+</html>
