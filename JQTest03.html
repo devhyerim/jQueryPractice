@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest03.html</title>
+<style type="text/css">
+
+	*
+	{
+		margin: 0px;
+		padding: 0px;
+	}
+	div
+	{
+		margin: 5px;
+		padding: 5px;
+		border: 3px solid black;
+		border-radius: 10px;
+	}
+
+</style>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+	//$();
+	//jquery();
+	$(document).ready(function()
+	{
+		$("div").click(function()
+		{
+			//alert("test");
+			//alert( $(this).text() );
+			//alert( $("h1", this).text() ); --> div 안의 h1 요소 특정하기
+			//alert( $("p", this).text() ); --> div 안의 p 요소 특정하기
+			
+			var h1 = $("h1", this).text();
+			var p = $("p", this).text();
+			
+			alert(h1 + " / " + p);
+		});
+	});
+	
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>A강의실</h1>
+	<p>Java 수업 중</p>
+</div>
+
+<div>
+	<h1>B강의실</h1>
+	<p>.NET 수업 중</p>
+</div>
+
+<div>
+	<h1>C강의실</h1>
+	<p>ORACLE 수업 중</p>
+</div>
+
+<div>
+	<h1>D강의실</h1>
+	<p>ASP 수업 중</p>
+</div>
+
+<div>
+	<h1>E강의실</h1>
+	<p>JSP 수업 중</p>
+</div>
+
+<div>
+	<h1>F강의실</h1>
+	<p>JQUERY 수업 중</p>
+</div>
+
+</body>
+</html>
