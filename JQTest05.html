@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest05.html</title>
+<style type="text/css">
+
+	.outer
+	{
+		width: 200px;
+		height: 200px;
+		background-color: orange;
+		padding: 50px;
+		margin: 10px;
+	}
+	.inner
+	{
+		width: 100%;
+		height: 100%;
+		background-color: red;
+	}
+
+</style>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		// 키보드 관련 이벤트
+		//$("textarea").keydown(function()
+		$("textarea").keyup(function()
+		{
+			//alert("확인");
+			
+			// 텍스트 박스에 입력된 값을 경고창을 통해 출력해서 확인하도록
+			// alert( $(this).text() ); // 입력 전에 alert 창이 떠서 입력 불가능
+			// alert( $(this).html() ); // 입력 전에 alert 창이 떠서 입력 불가능
+			
+			// textarea 값을 가져올 때 val() 을 사용해야 한다.
+			//alert( $(this).val() );
+			
+			var len = $(this).val().length;
+			
+			//alert(len);
+			var remain = 10 - len;
+			$("h1").html(remain); // 글자를 작성할 때마다 숫자가 10 9 8.. 줄어든다!
+			
+			// remain 이 0이 되었을 경우, 입력 제한하거나 경고창 띄우기
+			// 등의 추가적인 액션 처리를 할 수 있다.
+			if(remain<=3 && remain>=1)
+			{
+				$("h1").css("color", "orange");
+				
+			}else if(remain<=0)
+			{
+				$("h1").css("color", "red").html("더 이상 입력 불가");
+				$(this).attr("disabled", "disabled");
+				// this → textarea 의미. 이 textarea의 attr(속성) 중 disabled를 변경한다.
+			}else
+			{
+				$("h1").css("color", "black");
+			}
+			
+			// 잠금 해제 버튼을 눌렀을 때 기능
+			$("button").click(function()
+			{
+				$("textarea").removeAttr("disabled");
+				$("textarea").focus();
+			});
+			
+			// 마우스 관련 이벤트
+	    	$(".outer").mouseover(function()
+	     	{
+	       	$("body").append($("<div>mouseover</div>").css("color", "blue"));
+	      	}).mouseenter(function()
+	      	{
+	      	$("body").append($("<div>mouseenter</div>").css("color", "red"));
+	    	});
+			
+		});
+		
+	})
+
+</script>
+
+</head>
+<body>
+<br><br>
+키보드 관련 이벤트<br>
+1. keydown / 2. keypress / 3. keyup 순으로 이벤트 발생<br>
+
+<div>
+	<p>남기고 싶은 말</p>
+	<h1>10</h1>
+	<button type="button">잠금해제</button><br>
+	<textarea rows="5" cols="70"></textarea>
+</div>
+
+<br><br>
+마우스 관련 이벤트<br>
+mouseenter / mouseleave / mousemove / mouseout / mouseover / mouseup 등<br><br><br>
+
+<div class="outer">
+	<div class="inner"></div>
+</div>
+
+</body>
+</html>
