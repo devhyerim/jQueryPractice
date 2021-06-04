@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest08.html</title>
+<style type="text/css">
+	div.page
+	{
+		border: 1px solid gray;
+		padding: 3px;
+		margin: 2px;
+		position: absolute;   /* 해당 위치에 (absolute) 겹쳐지게 설정 */
+		right: 10px;
+		top: 80px;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		// 제이쿼리에서 css 속성을 여러개 묶어 지정할 때 다음과 같이 작성한다.
+		// {"":"", "":"" ...}
+		$("button").css({"display":"block", "width":"200px"});
+		
+		$("button").click(function()
+		{
+			// 버튼이 클릭 되었을 때
+			// page 속성을 가진 요소를 느리게 toggle 시키겠다. (5개 모두 한번에)
+			//$(".page").toggle("slow");
+			
+			// 버튼의 다음 control에 대해 toggle 시키겠다. (하나씩)
+			//$(this).next().toggle("slow");
+			
+			// '$(선택자).next()' : document 구조 상 다음 엘리먼트
+			// 즉, '$(this)' → button
+			// '$(this).next()' → button 입장에서 다음 엘리먼트는 각각의 div
+			
+			
+			// $(this).next().toggle(진행시간, 진행시간이 완료되었을 때! 수행할 기능 → function);
+			$(this).next().toggle(2000, function()
+			{
+				alert("토글 기능 테스트 완료");
+			});
+		});
+	});
+
+</script>
+
+</head>
+<body>
+
+show()/hide()/toggle()<br>
+slideDown()/slideUp()/slidToggle()<br>
+fadeIn()/fadeOut()/fadeToggle()<br>
+<br><br>
+
+<button>Toggle(토글) 버튼</button>
+<div class="page">
+	<h1>jQuery Toggle</h1>
+	<p>
+		show()/hide()<br>
+		toggle<br>
+		slideDown()/slideUp()<br>
+		slideToggle()<br>
+		fadeIn()/fadeOut()<br>
+		fadeToggle()<br>
+	</p>
+</div>
+
+<button>Toggle(토글) 버튼</button>
+<div class="page">
+	<h1>jQuery Toggle</h1>
+	<p>
+		show()/hide()<br>
+		toggle<br>
+		slideDown()/slideUp()<br>
+		slideToggle()<br>
+		fadeIn()/fadeOut()<br>
+		fadeToggle()<br>
+	</p>
+</div>
+
+<button>Toggle(토글) 버튼</button>
+<div class="page">
+	<h1>jQuery Toggle</h1>
+	<p>
+		show()/hide()<br>
+		toggle<br>
+		slideDown()/slideUp()<br>
+		slideToggle()<br>
+		fadeIn()/fadeOut()<br>
+		fadeToggle()<br>
+	</p>
+</div>
+
+<button>Toggle(토글) 버튼</button>
+<div class="page">
+	<h1>jQuery Toggle</h1>
+	<p>
+		show()/hide()<br>
+		toggle<br>
+		slideDown()/slideUp()<br>
+		slideToggle()<br>
+		fadeIn()/fadeOut()<br>
+		fadeToggle()<br>
+	</p>
+</div>
+
+<button>Toggle(토글) 버튼</button>
+<div class="page">
+	<h1>jQuery Toggle</h1>
+	<p>
+		show()/hide()<br>
+		toggle<br>
+		slideDown()/slideUp()<br>
+		slideToggle()<br>
+		fadeIn()/fadeOut()<br>
+		fadeToggle()<br>
+	</p>
+</div>
+
+</body>
+</html>
