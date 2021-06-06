@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest07.html</title>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+	
+	$(document).ready(function()
+	{
+		/*
+		$("#allCheck").change(function()
+		{
+			alert("change");
+		});
+		*/
+		
+		$("#allCheck").click(function()
+		{
+			//테스트
+			//alert("click");
+			
+			// 테스트
+			//alert( $(this).attr("checked") ); //-- undefined / undefined (attr은 제대로 작동X)
+			
+			//alert( $(this).prop("checked") ); //-- 속성 → true / false
+			
+			//alert( this.checked ); //-- 속성 → true / false
+			// 이 객체의 checked 속성을 경고창을 통해서 띄워라.
+			
+			//alert( $(this).is(":checked") ); 
+			
+			// 방법 1.
+			// input type이 checkbox인 것의 property 속성 중 checked 속성을
+			// this.checked 이 true면 true로, false면 하위도 다 false로..
+			// (this.checked)는 #allCheck를 의미
+			//$("div > input:checkbox").prop("checked", this.checked);
+			
+			// 방법 2.
+			// '$(선택자).children()': 선택자 기준으로 하위 엘리먼트 모두 선택
+			$("div").children().prop("checked", this.checked);
+			
+			});
+
+	});
+
+
+</script>
+
+</head>
+<body>
+
+<label><input type="checkbox" id="allCheck">모두 선택</label>
+<br><br>
+
+<div>
+	<input type="checkbox" id="check1">
+	<label for="check1">바나나</label><br>
+	<input type="checkbox" id="check2">
+	<label for="check2">딸기</label><br>
+	<input type="checkbox" id="check3">
+	<label for="check3">수박</label><br>
+	<input type="checkbox" id="check4">
+	<label for="check4">포도</label><br>
+	<input type="checkbox" id="check5">
+	<label for="check5">키위</label><br>
+</div>
+
+</body>
+</html>
