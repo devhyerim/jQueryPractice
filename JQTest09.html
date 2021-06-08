@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest09.html</title>
+<style type="text/css">
+	ul
+	{
+		list-style: none;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.innerfade.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		// jquery.innerfade.js 파일의 innerfade() 함수 사용
+		// 함수를 넘겨줄 때 JSON 형식을 구성해서 넘겨준다.
+		$("#innerFade").innerfade(
+		{
+			animationtype : 'fade'	// 'fade' or 'slide' (Default: 'fade')
+			, speed : 'normal'		// slow(default), normal, fast
+			, timeout: 2000			// milliseconds (default: 2000)
+			, type: 'sequence'		// sequence, random, random_start (default: sequence)
+			// containerheight: Height of the containing element in any css-height-value (Default: 'auto'),
+			// runningclass: CSS-Class which the container get’s applied (Default: 'innerfade'),
+			// children: optional children selector (Default: null)
+		});
+	});
+
+</script>
+
+
+</head>
+<body>
+
+<ul id="innerFade">
+	<li>
+		<img alt="" src="images/obj01.jpg" style="width: 50%; height: 50%;">
+	</li>
+	<li>
+		<img alt="" src="images/obj02.jpg" style="width: 50%; height: 50%;">
+	</li>
+	<li>
+		<img alt="" src="images/obj03.jpg" style="width: 50%; height: 50%;">
+	</li>
+	<li>
+		<img alt="" src="images/obj04.jpg" style="width: 50%; height: 50%;">
+	</li>
+	<li>
+		<img alt="" src="images/obj05.jpg" style="width: 50%; height: 50%;">
+	</li>
+</ul>
+
+</body>
+</html>
